@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mi Portafolio</title>
+    <!-- Aquí es donde enlazarías tu hoja de estilos CSS y cualquier script JavaScript -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Barra superior -->
+    <nav id="navbar">
+        <div class="time-date-container">
+            <div id="date"></div>
+            <div id="time"></div>
+        </div>
+    </nav>
+
+
+
+    <!-- Barra lateral -->
+    <div id="sidebar">
+        <!-- Aplicaciones -->
+        <div id="app1" class="app" onclick="openModal('modal1')">
+            <img src="images/laptop.png">
+            <p>Proyecto sistema de información</p>
+        </div>
+        <!-- Modal para la primera aplicación-->
+        <div id="modal1" class="modal">
+            <div class="top-bar-ubuntu" data-modal="modal1">
+                <span class="title">Proyecto sistema de información</span>
+                <button class="minimize" onclick="minimizeWindow('modal1')">-</button>
+                <button class="maximize" onclick="maximizeWindow('modal1')">+</button>
+
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+            </div>
+            <div class="modal-content">
+                <div class="content">
+                    <img src="images/logo_isa.png" alt="" id="myImage">
+                    <h4 id="h4-app1">Sistema de información ISA</h4>
+                    <p>Tuve la oportunidad</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="app2" class="app" onclick="openModal('modal2')">
+            <img src="images/pdf.png">
+            <p>Currículum</p>
+        </div>
+        <!-- Modal para la segunda aplicación-->
+        <div id="modal2" class="modal">
+            <div class="top-bar-ubuntu" data-modal="modal2">
+                <span class="title">Currículum</span>
+                <button class="minimize" onclick="minimizeWindow('modal2')">-</button>
+                <button class="maximize" onclick="maximizeWindow('modal2')">+</button>
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
+            </div>
+            <div class="download-bar">
+                <a href="docs/Resume.pdf" download class="custom-link">
+                    <i class="far fa-file" style="color: #FF7F00;"></i>
+                    Descargar
+                </a>
+                <a href="docs/Resume.pdf" target="_blank" class="custom-link">
+                    <i class="far fa-window-maximize" style="color: #ff7f00;"></i>
+                    Abrir en una nueva ventana
+                </a>
+            </div>
+
+            <div class="modal-content">
+                <div class="content">
+                    <object data="docs/Resume.pdf" type="application/pdf" width="100%" height="100%">
+                        <p>Este navegador no soporta la visualización de PDFs. Por favor descarga el PDF para verlo: <a
+                                href="ruta_al_archivo.pdf">Descargar PDF</a>.</p>
+                    </object>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="app3" class="app" onclick="openModal('modal3')">
+            <i class="fas fa-address-card fa-lg" style="color: #525aff; font-size: 50px;"></i>
+            <p>Sobre mí</p>
+        </div>
+
+        <!-- Modal para la tercera aplicación-->
+        <div id="modal3" class="modal">
+            <div class="top-bar-ubuntu" data-modal="modal3">
+                <span class="title">Sobre mí</span>
+                <button class="minimize" onclick="minimizeWindow('modal3')">-</button>
+                <button class="maximize" onclick="maximizeWindow('modal3')">+</button>
+                <span class="close" onclick="closeModal('modal3')">&times;</span>
+            </div>
+            <div class="modal-content">
+                <div class="content">
+                    <img src="images/me.jpg" alt="Descripción de la imagen" id="myImage">
+                    <h2 id="myTitle">Juan David Gil Valencia</h2>
+                    <h4 class="subtitle">Desarollador web | Backend | Frontend</h4>
+                    <h3>Tecnologías</h3>
+                    <div class="badge-grid">
+                        <img src="https://img.shields.io/badge/HTML-badge?logo=HTML5&color=%23FFFFFF" alt="HTML">
+                        <img src="https://img.shields.io/badge/CSS-badge?logo=css3&logoColor=%232465F1&color=%23FFFFFF"
+                            alt="CSS badge">
+                        <img src="https://img.shields.io/badge/Javascript-badge?logo=javascript&logoColor=%23F7DF1E&labelColor=%23000000&color=%23FFFFFF"
+                            alt="CSS badge">
+                        <img src="https://img.shields.io/badge/php-badge?logo=php&logoColor=%23777BB4&labelColor=%23000000&color=%23FFFFFF"
+                            alt="CSS badge">
+                        <img src="https://img.shields.io/badge/MySQL-badge?logo=mysql&logoColor=%234479A1&color=%23FFFFFF"
+                            alt="CSS badge">
+                        <img src="https://img.shields.io/badge/phpMyAdmin-badge?logo=phpmyadmin&logoColor=%236C78AF&color=%23FFFFFF"
+                            alt="CSS badge">
+                        <img src="https://img.shields.io/badge/Git-badge?logo=git&logoColor=%23F05032&color=%23FFFFFF"
+                            alt="CSS badge">
+                        <img src="https://img.shields.io/badge/GitHub-badge?logo=github&logoColor=%23181717&color=%23FFFFFF"
+                            alt="CSS badge">
+                    </div>
+                    <h3>Sobre mí</h3>
+                    <p> Hola! 👋 Soy Juan David Desarollador Web residiendo actualmente en Colombia, programar es mi
+                        pasión y mi enfoque de carrera profesional, desarrollar aplicaciones se ha convertido en mi
+                        motivación.
+                    </p>
+                    <h3>Educación</h3>
+                    <p>Desde pequeño me ha gustado la tecnología. Esta pasión me llevó a estudiar en la Institución
+                        Universitaria de Envigado, donde decidí estudiar Ingeniería de
+                        Sistemas. Durante mis años de estudio, aprendí sobre base de datos y el desarrollo web. Las
+                        horas que pasaba aprendiendo y practicando estas tecnologías me daban una sensación de
+                        satisfacción y logro que pocas otras cosas podían igualar.
+                        termine mis estudios universitarios en el año 2023.
+                    </p>
+                    <h3>Práctica profesional</h3>
+                    <p>Tuve la gran oportunidad de realizar mis prácticas profesionales en ISA, Donde estuve trabajando
+                        en el desarrollo de un sistema de información para calcular
+                        el OPEX (gastos operativos) de las concesiones viales. Este proyecto no solo puso a prueba mis
+                        habilidades técnicas, sino que también me permitió
+                        comprender a fondo la complejidad y las sutilezas del funcionamiento del sector de las
+                        infraestructuras viales. Pude aplicar los conocimientos de bases
+                        de datos y desarrollo web que adquirí durante mi tiempo en la universidad.
+                    </p>
+                    <h3>Curriculum Vitae</h3>
+                    <a href="ruta-a-tu-curriculum-vitae.pdf" target="_blank">Echa un vistazo a mi currículum aquí</a>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- FOOTER -->
+    <!-- Barra de tareas -->
+    <footer>
+        <div id="taskbar">
+            <!-- Centro de la barra de tareas -->
+            <div id="taskbar-center">
+                <!-- Aquí puedes agregar tus imágenes y texto uno después del otro -->
+                <div class="task">
+                    <a href="https://www.linkedin.com/in/juandavidgv/" target="_blank">
+                        <img src="images/linkedin.png">
+                    </a>
+                </div>
+                <div class="task">
+                    <a href="https://github.com/juandgv" target="_blank">
+                        <img src="images/github.png">
+                    </a>
+
+                </div>
+                <!-- ...más tareas... -->
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>

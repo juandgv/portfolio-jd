@@ -1,0 +1,376 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #AD3135, #641662, #230118);
+    
+}
+body {
+    position: relative;
+    /* ...otros estilos... */
+}
+#sidebar {
+    padding: 20px;
+    display: flex; 
+    flex-direction: column; 
+    flex-wrap: wrap;
+    max-height: 100%; 
+    justify-content: flex-start;  
+    align-items: flex-start;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.app img {
+    width: 50px;
+    height: 50px;
+}
+
+.app p {
+    text-align: center;
+    margin-top: 5px;
+    color: aliceblue;
+}
+/* Estilo para la barra de navegación */
+#navbar {
+    background-color: #1D1D1D;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+}
+
+.time-date-container {
+    display: flex;
+    gap: 20px; /* Espacio entre la fecha y la hora */
+}
+
+body {
+    padding-top: 60px;
+}
+
+/* Codigo para la barra lateral la cual tiene links a las redes sociales */
+#taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 60px;
+    backdrop-filter: blur(5px);
+    background-color: hsla(0,0%,100%,.15);
+    border: 1px solid hsla(0,0%,100%,.2);
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#taskbar #taskbar-center {
+    margin-top: 60px; /* Ajusta este valor para controlar el espacio en la parte superior de los íconos */
+}
+
+#taskbar .task {
+    margin: 30px; /* Aumenta este valor para dar más espacio entre las imágenes */
+}
+
+#taskbar .task img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+#taskbar .task img:hover {
+    transform: scale(1.2);
+}
+/* MODAL PARA EL PRIMER ARCHIVO  */
+#sidebar {
+    margin-left: 60px; /* Ajusta este valor para mover la barra lateral a la derecha */
+}
+
+/* Efecto hover para las imagenes y el texto */
+#sidebar .app {
+    position: relative;
+    padding: 10px 10px 10px 10px; /* padding: top right bottom left */
+    border-radius: 10px; /* Añade bordes redondeados */
+    margin-bottom: 20px; /* Añade este para dar más espacio entre aplicaciones */
+}
+
+#sidebar .app:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Añade un fondo blanco transparente */
+}
+
+#sidebar .app img, #sidebar .app p {
+    display: block;
+    transition: all 0.3s ease; /* Añade transición para suavizar el cambio */
+    margin-bottom: 0; /* Elimina el margen inferior */
+}
+
+#sidebar .app:hover img, #sidebar .app:hover p {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al hacer hover */
+    cursor: pointer; /* Cambia el cursor a un puntero */
+}
+/* Codigo para las ventanas */
+/* Estilo para la ventana modal */
+.modal {
+    position: absolute;
+    width: 800px;
+    height: 700px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: none;
+    overflow: hidden;
+    z-index: 10000; /* Aumenta el z-index para que la ventana modal aparezca por encima de otros elementos */
+    
+}
+.top-bar-ubuntu {
+    cursor: move; /* Cambia el cursor a un puntero */	
+    background-color: #323737;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0px 0px;
+}
+.top-bar-ubuntu .title {
+    margin-right: auto; /* Push everything to the right of the title to the far right */
+}
+
+.minimize, .maximize, .close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px; /* Incrementamos el tamaño de la fuente para que los caracteres sean más grandes */
+    line-height: 1;
+    margin-left: 10px;
+    cursor: pointer;
+    height: 24px; /* Especificamos la altura para asegurar que todos los elementos estén alineados */
+    display: flex; /* Utilizamos flexbox para alinear los elementos a lo largo del eje horizontal */
+    align-items: center; /* Alineamos los elementos a lo largo del eje vertical */
+    justify-content: center; /* Centramos los elementos a lo largo del eje horizontal */
+}
+
+.close {
+    color: red;
+}
+
+
+.modal-content {
+    padding: 20px;
+    overflow: auto; /* To enable scrolling if the content overflows */
+}
+
+/* Codigo para la segunda ventana modal */
+
+/* Estilos específicos para el modal con id="modal2" */
+#modal2 {
+    display: flex;
+    flex-direction: column;
+}
+
+#modal2 .modal-content {
+    flex: 1;
+    display: flex;  
+    overflow: auto;
+    height: calc(100% - 100px); /* Restamos la altura de las barras (cambia este valor según tus necesidades) */
+}
+
+#modal2 .content {
+    flex: 1;
+    display: flex;
+    overflow: auto;  
+}
+
+
+
+/* Código para el "Sobre mí" */
+#modal3 .content, #modal1 .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#modal3 .content #myImage {
+    max-width: 60%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#modal3 .modal-content, #modal1 .modal-content {
+    overflow-y: auto;
+    height: calc(100% - 30px);
+    padding: 20px;
+}
+
+#modal3 .content #myTitle, #modal1 .content #myTitle {
+    text-align: left;
+}
+
+#modal3 .content .subtitle, #modal1 .content .subtitle {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+
+#app3 i,
+#app3 p {
+    display: block;
+    transition: all 0.3s ease; /* Añade transición para suavizar el cambio */
+    margin-bottom: 0; /* Elimina el margen inferior */
+    cursor: pointer;
+}
+
+#app3:hover i,
+
+#app3:hover p {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al hacer hover */
+    cursor: pointer; /* Cambia el cursor a un puntero */
+}
+
+  
+
+/* CSS PARA EL CONTENIDO DE LAS VENTANAS MODALES  */
+
+.modal-content .content h2 {
+    font-size: 30px;
+    margin-top: 0.2em; 
+    margin-bottom: 0.3em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+  }
+  
+  .modal-content .content h4 {
+    font-size: 16px;
+    margin-top: -0.2em; /* espacio inferior */
+    margin-bottom: 0; /* Elimina el margen inferior */
+  }
+
+  /* CSS para los insignias y grilla   */
+  .badge-grid img {
+    width: auto;
+    height: 24px;
+    padding-right: 10px;
+    margin-bottom: 10px; /* Espacio entre cada fila de imagenes */
+    margin-right: 20px;
+  }
+  
+  .badge-grid {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: start; /* Esto alinea los elementos a la izquierda */
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Espacio entre filas */
+    max-width: 80%; /* Maxima amplitud de la grilla */
+    margin-left: auto; /* Nuevo: Centra el contenedor horizontalmente */
+    margin-right: auto; /* Nuevo: Centra el contenedor horizontalmente */
+    margin-bottom: 30px; /* Nuevo: Agrega espacio después de la grilla */
+  }
+
+  .content p {
+    text-align: justify;
+    max-width: 600px; /* Ajusta el valor según tus preferencias */
+    margin-left: auto;
+    margin-right: auto;
+}
+.content h3 {
+    margin-bottom: 20px;
+}
+
+.content p {
+    margin-bottom: 20px;
+}
+    
+/* CSS para la segunda aplicacion  */
+.download-bar {
+    background-color: #323737;
+    outline: 1px solid #7b7d7b;
+    font-size: 12px;
+    padding: 4px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.custom-link {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #4B4848; /* Color oscuro de Ubuntu */
+    color: #fff; /* Texto blanco */
+    text-decoration: none; /* Eliminar subrayado */
+    border: none; /* Sin bordes */
+    padding: 10px 15px; /* Espacio interno */
+    margin-right: 10px; /* Espacio entre botones */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+.custom-link:hover {
+    background-color: #201F1F; /* Cambiar el color de fondo al pasar el mouse */
+}
+.custom-link i {
+    margin-right: 5px;  /* espacio entre el ícono y el texto */
+}
+.download-bar {
+    padding-left: 10px; /* Añade un padding a la izquierda */
+}
+.download-bar .custom-link {
+    margin-right: 10px; /* Añade espacio a la derecha de cada enlace */
+    font-size: 14px;
+}
+.download-bar .custom-link i {
+    font-size: 18px; /* ajusta esto al tamaño que desees para el ícono */
+}
+/* CSS para maximizar la ventana SE JUNTA CON EL JAVASCRIPT PARA ESTA FUNCIONALIDAD  */
+.maximized {
+    position: fixed;
+    top: 30px; /* Altura de la navbar */
+    left: 60px; /* Ancho del sidebar */
+    right: 0;
+    bottom: 0;
+    width: auto; /* Ancho auto para permitir a 'right' y 'left' definir el ancho */
+    height: auto; /* Altura auto para permitir a 'top' y 'bottom' definir la altura */
+    z-index: 9998; /* Asegúrate que la ventana maximizada esté debajo de la navbar */
+}
+
+
+#modal1 .content #myImage {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#h4-app1 {
+ 
+    font-weight: bold;
+    font-size: 25px;
+}
+#h3-app1 {
+ 
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+  
+  
+  
