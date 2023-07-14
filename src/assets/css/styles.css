@@ -19,34 +19,56 @@ body {
     position: relative;
    
 }
-#sidebar {
-    padding: 20px;
-    display: flex; 
-    flex-direction: column; 
-    flex-wrap: wrap;
-    max-height: 100%; 
-    justify-content: flex-start;  
+
+
+.desktop-grid {
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    padding: 20px;
 }
 
 .app {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px; /* padding: top right bottom left */
+    border-radius: 10px; /* Añade bordes redondeados */
     width: 100px;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    transition-property: color, width; /* Especifica las propiedades que deseo animar */
+    transition-duration: 0.3s; /* Duración de la transición */
+    transition-timing-function: ease; /* Función de temporización de la transición */
+    margin-left: 60px;
+    
 }
+
+.app:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Añade un fondo blanco transparente */
+}
+
 .app img {
+    display: block;
     width: 50px;
     height: 50px;
+    transform: scale(1); /* Asegura que la imagen comienza a escala normal antes de hover */
 }
 
 .app p {
+    display: block;
     text-align: center;
     margin-top: 5px;
     color: aliceblue;
+    transform: scale(1); /* Asegura que el párrafo comienza a escala normal antes de hover */
 }
+
+.app:hover img, .app:hover p {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al hacer hover */
+    cursor: pointer; /* Cambia el cursor a un puntero */
+}
+
+
+
 /* Estilo para la barra de navegación */
 #navbar {
     background-color: #1D1D1D;
@@ -103,6 +125,8 @@ body {
 #taskbar .task img:hover {
     transform: scale(1.2);
 }
+
+
 /* MODAL PARA EL PRIMER ARCHIVO  */
 #sidebar {
     margin-left: 60px; /* Ajusta este valor para mover la barra lateral a la derecha */
