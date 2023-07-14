@@ -3,18 +3,19 @@
     padding: 0;
     outline: none;
     box-sizing: border-box;
-    font-family: 'Ubuntu', sans-serif;
+    
 }
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
     background: linear-gradient(to bottom, #AD3135, #641662, #230118);
+    font-family: 'Ubuntu', sans-serif;
     
 }
 body {
     position: relative;
-    /* ...otros estilos... */
+   
 }
 #sidebar {
     padding: 20px;
@@ -119,8 +120,9 @@ body {
 
 #sidebar .app img, #sidebar .app p {
     display: block;
-    transition: all 0.3s ease; /* Añade transición para suavizar el cambio */
-    margin-bottom: 0; /* Elimina el margen inferior */
+    transition-property: color, width; /* Especifica las propiedades que deseo animar */
+    transition-duration: 0.3s; /* Duración de la transición */
+    transition-timing-function: ease; /* Función de temporización de la transición */
 }
 
 #sidebar .app:hover img, #sidebar .app:hover p {
@@ -234,9 +236,11 @@ body {
 #app3 i,
 #app3 p {
     display: block;
-    transition: all 0.3s ease; /* Añade transición para suavizar el cambio */
-    margin-bottom: 0; /* Elimina el margen inferior */
+    margin-bottom: 0;
     cursor: pointer;
+    transition-property: color, font-size; /* Especifica las propiedades que deseas animar */
+    transition-duration: 0.3s; /* Duración de la transición */
+    transition-timing-function: ease; /* Función de temporización de la transición */
 }
 
 #app3:hover i,
@@ -360,14 +364,23 @@ body {
 }
 
 #h4-app1 {
- 
     font-weight: bold;
-    font-size: 25px;
+    font-size: 30px;
+    margin-bottom: 30px;
 }
 #h3-app1 {
- 
+    text-align: left;
+    margin-left: 130px;
+    font-size: 19px;
+    width: calc(100% - 20px);  /* Resta el margen izquierdo del ancho total para evitar un posible desbordamiento */
     font-weight: bold;
-    font-size: 20px;
+}
+.left-p {
+    /* Aplica los estilos del 'h3' a los elementos 'p' con la clase 'left-p' */
+    text-align: left;
+    margin-left: 130px;
+    font-size: 16px;
+    width: calc(100% - 20px);
 }
 
 
