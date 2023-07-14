@@ -11,6 +11,8 @@ html, body {
     padding: 0;
     background: linear-gradient(to bottom, #AD3135, #641662, #230118);
     font-family: 'Ubuntu', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     
 }
 body {
@@ -358,7 +360,7 @@ body {
 
 
 #modal1 .content #myImage {
-    max-width: 80%;
+    max-width: 60%;
     height: auto;
     margin-bottom: 20px;
 }
@@ -368,21 +370,28 @@ body {
     font-size: 30px;
     margin-bottom: 30px;
 }
-#h3-app1 {
+.left-p, .left-list {
+    /* Aplica los estilos del 'h3' a los elementos 'p' y 'ol' con la clase 'left-p' y 'left-list' respectivamente */
     text-align: left;
-    margin-left: 130px;
-    font-size: 19px;
-    width: calc(100% - 20px);  /* Resta el margen izquierdo del ancho total para evitar un posible desbordamiento */
-    font-weight: bold;
-}
-.left-p {
-    /* Aplica los estilos del 'h3' a los elementos 'p' con la clase 'left-p' */
-    text-align: left;
-    margin-left: 130px;
+    margin-left: 50px; /* reducir el margen izquierdo */
     font-size: 16px;
     width: calc(100% - 20px);
 }
 
+.left-list {
+    /* Aquí puedes agregar los estilos adicionales que necesites para el 'ol' */
+    overflow: auto;
+    padding-left: 0; /* remueve el padding predeterminado de la lista */
+    list-style-position: inside; /* coloca los números/letras de la lista dentro del margen de la lista */
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.left-list li {
+    /* Aquí puedes agregar estilos específicos para los 'li' dentro del 'ol' */
+    margin-bottom: 30px;
+    
+}
 
   
   

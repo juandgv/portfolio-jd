@@ -1,197 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio</title>
-    <!-- Aquí es donde enlazarías tu hoja de estilos CSS y cualquier script JavaScript -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
-
-    <!-- Barra superior -->
-    <nav id="navbar">
-        <div class="time-date-container">
-            <div id="date"></div>
-            <div id="time"></div>
-        </div>
-    </nav>
-
-
-
-    <!-- Barra lateral -->
-    <div id="sidebar">
-        <!-- Aplicaciones -->
-        <div id="app1" class="app" onclick="openModal('modal1')">
-            <img src="images/laptop.png">
-            <p>Proyecto sistema de información</p>
-        </div>
-        <!-- Modal para la primera aplicación-->
-        <div id="modal1" class="modal">
-            <div class="top-bar-ubuntu" data-modal="modal1">
-                <span class="title">Proyecto sistema de información</span>
-                <button class="minimize" onclick="minimizeWindow('modal1')">-</button>
-                <button class="maximize" onclick="maximizeWindow('modal1')">+</button>
-
-                <span class="close" onclick="closeModal('modal1')">&times;</span>
+    <header>
+        <nav id="navbar">
+            <div class="time-date-container">
+                <div id="date"></div>
+                <div id="time"></div>
             </div>
-            <div class="modal-content">
-                <div class="content">
-                    <img src="images/logo_isa.png" alt="" id="myImage">
-                    <h4 id="h4-app1">Sistema de información ISA</h4>
-                    <h3 id="h3-app1"">Descripción del centro de prácticas</h3>
-                    <p left-p>
-                        Isa es un grupo empresarial mixto de transmision de energia, vias y telecomunicaciones con mas de 55 años de experiencia   
-                    </p>
-                    <h3 id="h3-app1"">Planteamiento del problema</h3>
-                    <p class="left-p">Continuar el desarollo de un sistema de información </p>
-                    <h3>Objetivos del proyecto</h3>
-                    <p>  Mi objetivo era continuar con el desarrollo del sistema de información que permita calcular presupuestos</p>
-                    <h3>Metodología y Herramientas Utilizadas</h3>
-                    <p>
-                        Para llevar a cabo este proyecto, utilicé un conjunto de tecnologías web, incluyendo HTML, CSS y JavaScript para el front-end, y PHP y MySQL para el back-end.
-                    </p>
-                    <h3>Desafíos</h3>
-                    <p>Uno de los principales desafíos fue entender la base de código existente y optimizarlo. Para superar esto, dediqué tiempo a familiarizarme completamente con
-                         la base de código y a comprender la lógica detrás de ella. Además, trabajé de cerca con mi supervisor y otros miembros del equipo, quienes me proporcionaron una valiosa orientación.</p>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sidebar">
+            <div class="app" onclick="openModal('modal1')">
+                <img src="images/laptop.png" loading="lazy" alt="Icono Laptop">
+                <p>Proyecto sistema de información</p>
+            </div>
+
+            <div id="modal1" class="modal">
+                <div class="top-bar-ubuntu" data-modal="modal1">
+                    <span class="title">Proyecto sistema de información</span>
+                    <button class="minimize" onclick="minimizeWindow('modal1')">-</button>
+                    <button class="maximize" onclick="maximizeWindow('modal1')">+</button>
+                    <span class="close" onclick="closeModal('modal1')">&times;</span>
                 </div>
-            </div>
-        </div>
-
-
-
-        <div id="app2" class="app" onclick="openModal('modal2')">
-            <img src="images/pdf.png">
-            <p>Currículum</p>
-        </div>
-        <!-- Modal para la segunda aplicación-->
-        <div id="modal2" class="modal">
-            <div class="top-bar-ubuntu" data-modal="modal2">
-                <span class="title">Currículum</span>
-                <button class="minimize" onclick="minimizeWindow('modal2')">-</button>
-                <button class="maximize" onclick="maximizeWindow('modal2')">+</button>
-                <span class="close" onclick="closeModal('modal2')">&times;</span>
-            </div>
-            <div class="download-bar">
-                <a href="docs/Resume.pdf" download class="custom-link">
-                    <i class="far fa-file" style="color: #FF7F00;"></i>
-                    Descargar
-                </a>
-                <a href="docs/Resume.pdf" target="_blank" class="custom-link">
-                    <i class="far fa-window-maximize" style="color: #ff7f00;"></i>
-                    Abrir en una nueva ventana
-                </a>
-            </div>
-
-            <div class="modal-content">
-                <div class="content">
-                    <object data="docs/Resume.pdf" type="application/pdf" width="100%" height="100%">
-                        <p>Este navegador no soporta la visualización de PDFs. Por favor descarga el PDF para verlo: <a
-                                href="ruta_al_archivo.pdf">Descargar PDF</a>.</p>
-                    </object>
-                </div>
-            </div>
-
-        </div>
-
-
-        <div id="app3" class="app" onclick="openModal('modal3')">
-            <i class="fas fa-address-card fa-lg" style="color: #525aff; font-size: 50px;"></i>
-            <p>Sobre mí</p>
-        </div>
-
-        <!-- Modal para la tercera aplicación-->
-        <div id="modal3" class="modal">
-            <div class="top-bar-ubuntu" data-modal="modal3">
-                <span class="title">Sobre mí</span>
-                <button class="minimize" onclick="minimizeWindow('modal3')">-</button>
-                <button class="maximize" onclick="maximizeWindow('modal3')">+</button>
-                <span class="close" onclick="closeModal('modal3')">&times;</span>
-            </div>
-            <div class="modal-content">
-                <div class="content">
-                    <img src="images/me.jpg" alt="Descripción de la imagen" id="myImage">
-                    <h2 id="myTitle">Juan David Gil Valencia</h2>
-                    <h4 class="subtitle">Desarollador web | Backend | Frontend</h4>
-                    <h3>Tecnologías</h3>
-                    <div class="badge-grid">
-                        <img src="https://img.shields.io/badge/HTML-badge?logo=HTML5&color=%23FFFFFF" alt="HTML">
-                        <img src="https://img.shields.io/badge/CSS-badge?logo=css3&logoColor=%232465F1&color=%23FFFFFF"
-                            alt="CSS badge">
-                        <img src="https://img.shields.io/badge/Javascript-badge?logo=javascript&logoColor=%23F7DF1E&labelColor=%23000000&color=%23FFFFFF"
-                            alt="CSS badge">
-                        <img src="https://img.shields.io/badge/php-badge?logo=php&logoColor=%23777BB4&labelColor=%23000000&color=%23FFFFFF"
-                            alt="CSS badge">
-                        <img src="https://img.shields.io/badge/MySQL-badge?logo=mysql&logoColor=%234479A1&color=%23FFFFFF"
-                            alt="CSS badge">
-                        <img src="https://img.shields.io/badge/phpMyAdmin-badge?logo=phpmyadmin&logoColor=%236C78AF&color=%23FFFFFF"
-                            alt="CSS badge">
-                        <img src="https://img.shields.io/badge/Git-badge?logo=git&logoColor=%23F05032&color=%23FFFFFF"
-                            alt="CSS badge">
-                        <img src="https://img.shields.io/badge/GitHub-badge?logo=github&logoColor=%23181717&color=%23FFFFFF"
-                            alt="CSS badge">
+                <div class="modal-content">
+                    <div class="content">
+                        <img src="images/logo_isa.png" loading="lazy" id="myImage">
+                        <h4 id="h4-app1">Sistema de información ISA</h4>
+                        <h3 class="h3-app1">Descripción del centro de prácticas</h3>
+                        <p class="left-p">
+                            Isa es un grupo empresarial mixto de transmisión de energía, vías y telecomunicaciones con más de 55 años de experiencia
+                        </p>
+                        <h3 class="h3-app1">Planteamiento del problema</h3>
+                        <p class="left-p">Continuar el desarrollo de un sistema de información </p>
+                        <h3 class="h3-app1">Objetivos del proyecto</h3>
+                        <p class="left-p">Mi objetivo era continuar con el desarrollo del sistema de información que permita calcular presupuestos</p>
+                        <h3 class="h3-app1">Metodología y Herramientas Utilizadas</h3>
+                        <p>
+                            Para llevar a cabo este proyecto, utilicé un conjunto de tecnologías web, incluyendo HTML, CSS y JavaScript para el front-end, y PHP y MySQL para el back-end.
+                        </p>
+                        <h3 class="h3-app1">Desafíos</h3>
+                        <p class="left-p">Uno de los principales desafíos fue entender la base de código existente y optimizarlo. Para superar esto, dediqué tiempo a familiarizarme completamente con la base de código y a comprender la lógica detrás de ella. Además, trabajé de cerca con mi supervisor y otros miembros del equipo, quienes me proporcionaron una valiosa orientación.</p>
+                        <h3 class="h3-app1">Resultados y logros</h3>
+                        <ol class="left-list">
+                            <li><strong>Mejora de la Interfaz de Usuario:</strong> Se rediseñó la interfaz de usuario, lo que resultó en un sistema más intuitivo y fácil de usar. Este cambio no sólo mejoró la estética general, sino que también facilitó la navegación, permitiendo a los usuarios acceder y entender la información de forma más rápida.</li>
+                            <li><strong>Desarrollo de Nuevos Módulos y Funcionalidades:</strong> Se crearon e implementaron nuevos módulos y funcionalidades que ampliaron las capacidades del sistema. Estas mejoras proporcionaron una mayor personalización y flexibilidad, permitiendo a la organización adaptar el sistema a sus necesidades cambiantes.</li>
+                            <li><strong>Optimización de la Base de Datos:</strong> Se llevó a cabo una revisión exhaustiva de la base de datos y se realizaron mejoras significativas en su estructura y funcionamiento. Esta optimización mejoró la velocidad y eficiencia del sistema y aseguró una mayor precisión y fiabilidad de los datos.</li>
+                        </ol>
+                        <h3 class="h3-app1">Reflexiones y Aprendizajes</h3>
+                        <p>Este proyecto me permitió aplicar y profundizar en mis conocimientos de desarrollo web y bases de datos. Aprendí sobre la importancia de la comprensión y optimización del código existente, y también sobre cómo trabajar en un entorno de equipo. Adquirí experiencia en la resolución de problemas y el manejo de desafíos, y estos aprendizajes serán invaluables para mis futuros proyectos.</p>
                     </div>
-                    <h3>Sobre mí</h3>
-                    <p> Hola! 👋 Soy Juan David Desarollador Web residiendo actualmente en Colombia, programar es mi
-                        pasión y mi enfoque de carrera profesional, desarrollar aplicaciones se ha convertido en mi
-                        motivación.
-                    </p>
-                    <h3>Educación</h3>
-                    <p>Desde pequeño me ha gustado la tecnología. Esta pasión me llevó a estudiar en la Institución
-                        Universitaria de Envigado, donde decidí estudiar Ingeniería de
-                        Sistemas. Durante mis años de estudio, aprendí sobre base de datos y el desarrollo web. Las
-                        horas que pasaba aprendiendo y practicando estas tecnologías me daban una sensación de
-                        satisfacción y logro que pocas otras cosas podían igualar.
-                        termine mis estudios universitarios en el año 2023.
-                    </p>
-                    <h3>Práctica profesional</h3>
-                    <p>Tuve la gran oportunidad de realizar mis prácticas profesionales en ISA, Donde estuve trabajando
-                        en el desarrollo de un sistema de información para calcular
-                        el OPEX (gastos operativos) de las concesiones viales. Este proyecto no solo puso a prueba mis
-                        habilidades técnicas, sino que también me permitió
-                        comprender a fondo la complejidad y las sutilezas del funcionamiento del sector de las
-                        infraestructuras viales. Pude aplicar los conocimientos de bases
-                        de datos y desarrollo web que adquirí durante mi tiempo en la universidad.
-                    </p>
-                    <h3>Curriculum Vitae</h3>
-                    <a href="ruta-a-tu-curriculum-vitae.pdf" target="_blank">Echa un vistazo a mi currículum aquí</a>
-
                 </div>
             </div>
-        </div>
 
+            <div class="app" onclick="openModal('modal2')">
+                <img src="images/pdf.png" loading="lazy" alt="Icono PDF">
+                <p>Currículum</p>
+            </div>
 
-    </div>
+            <div id="modal2" class="modal">
+                <div class="top-bar-ubuntu" data-modal="modal2">
+                    <span class="title">Currículum</span>
+                    <button class="minimize" onclick="minimizeWindow('modal2')">-</button>
+                    <button class="maximize" onclick="maximizeWindow('modal2')">+</button>
+                    <span class="close" onclick="closeModal('modal2')">&times;</span>
+                </div>
+                <div class="modal-content">
+                    <div class="content">
+                        <iframe src="docs/Juan David Gil Valencia · CV.pdf" width="100%" height="100%" allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
 
-    <!-- FOOTER -->
-    <!-- Barra de tareas -->
+            <div class="app" onclick="openModal('modal3')">
+                <i class="fas fa-address-card fa-lg" style="color: #525aff; font-size: 50px;"></i>
+                <p>Sobre mí</p>
+            </div>
+
+            <div id="modal3" class="modal">
+                <div class="top-bar-ubuntu" data-modal="modal3">
+                    <span class="title">Sobre mí</span>
+                    <button class="minimize" onclick="minimizeWindow('modal3')">-</button>
+                    <button class="maximize" onclick="maximizeWindow('modal3')">+</button>
+                    <span class="close" onclick="closeModal('modal3')">&times;</span>
+                </div>
+                <div class="modal-content">
+                    <div class="content">
+                        <h2>Sobre mí</h2>
+                        <p>Hola, soy Juan David, un desarrollador web autodidacta apasionado por la tecnología y siempre dispuesto a aprender nuevas habilidades.</p>
+                        <h3>Experiencia</h3>
+                        <ul>
+                            <li>Desarrollador Full Stack en ISA</li>
+                            <li>Freelancer en Desarrollo Web</li>
+                        </ul>
+                        <h3>Educación</h3>
+                        <ul>
+                            <li>Ingeniería de Sistemas en la Universidad Nacional de Colombia</li>
+                        </ul>
+                        <h3>Habilidades</h3>
+                        <ul>
+                            <li>Desarrollo web: HTML, CSS, JavaScript, PHP, MySQL</li>
+                            <li>Desarrollo de software: Python, Java</li>
+                            <li>Control de versiones: Git</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
     <footer>
         <div id="taskbar">
-            <!-- Centro de la barra de tareas -->
             <div id="taskbar-center">
-                <!-- Aquí puedes agregar tus imágenes y texto uno después del otro -->
                 <div class="task">
-                    <a href="https://www.linkedin.com/in/juandavidgv/" target="_blank">
-                        <img src="images/linkedin.png">
+                    <a href="https://www.linkedin.com/in/juandavidgv/" target="_blank" rel="noopener">
+                        <img src="images/linkedin.png" loading="lazy" alt="Icono LinkedIn">
                     </a>
                 </div>
                 <div class="task">
-                    <a href="https://github.com/juandgv" target="_blank">
-                        <img src="images/github.png">
+                    <a href="https://github.com/juandgv" target="_blank" rel="noopener">
+                        <img src="images webp/github.webp" loading="lazy" alt="Icono GitHub">
                     </a>
-
                 </div>
-                <!-- ...más tareas... -->
             </div>
         </div>
     </footer>
-</body>
-<script src="script.js"></script>
 
+    <script src="script.js"></script>
+</body>
 </html>
