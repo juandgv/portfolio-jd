@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio</title>
+    <title>JeyDi</title>
+    <link rel="icon" type="image/png" href="/src/assets/images/linux.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
+    <link rel="stylesheet" type="text/css" href="/src/assets/css/styles.css">
+</head> 
 
 <body>
     <header>
@@ -25,7 +26,7 @@
     <main>
         <section id="sidebar">
             <div class="app" onclick="openModal('modal1')">
-                <img src="images/laptop.png" loading="lazy" alt="Icono Laptop">
+                <img src="/src/assets/images/laptop.png" loading="lazy" alt="Icono Laptop">
                 <p>Proyecto sistema de información</p>
             </div>
 
@@ -67,7 +68,7 @@
             </div>
 
             <div class="app" onclick="openModal('modal2')">
-                <img src="images/pdf.png" loading="lazy" alt="Icono PDF">
+                <img src="/src/assets/images/pdf.png" loading="lazy" alt="Icono PDF">
                 <p>Currículum</p>
             </div>
 
@@ -80,7 +81,7 @@
                 </div>
                 <div class="modal-content">
                     <div class="content">
-                        <iframe src="docs/Juan David Gil Valencia · CV.pdf" width="100%" height="100%" allow="autoplay"></iframe>
+                        <iframe src="/public/files/Juan David Gil Valencia · CV.pdf" width="100%" height="100%" allow="autoplay"></iframe>
                     </div>
                 </div>
             </div>
@@ -128,18 +129,19 @@
             <div id="taskbar-center">
                 <div class="task">
                     <a href="https://www.linkedin.com/in/juandavidgv/" target="_blank" rel="noopener">
-                        <img src="images/linkedin.png" loading="lazy" alt="Icono LinkedIn">
+                        <img src="/src/assets/images/linkedin.png" loading="lazy" alt="Icono LinkedIn">
                     </a>
                 </div>
                 <div class="task">
                     <a href="https://github.com/juandgv" target="_blank" rel="noopener">
-                        <img src="images webp/github.webp" loading="lazy" alt="Icono GitHub">
+                        <img src="/src/assets/images webp/github.webp" loading="lazy" alt="Icono GitHub">
                     </a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    
+    <script src="/src/script.js"></script>
 </body>
 </html>
