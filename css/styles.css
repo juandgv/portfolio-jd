@@ -14,6 +14,13 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
     
 }
+/* Responsive para la fuente  */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+}
+
 
 /* CSS PARA LA GRILLA DE EL ESCRITORIO (incluyendo las imagenes y el texto */
 .desktop-grid {
@@ -62,6 +69,22 @@ html, body {
     cursor: pointer; /* Cambia el cursor a un puntero */
 }
 
+/* Responsive de la grilla  */
+@media screen and (max-width: 768px) {
+    .desktop-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 768px) {
+    .app {
+        width: 80px;
+        margin-left: 20px;
+    }
+}
+
+
+
 /* //////////////////////////////////////////////////////////// */
 
 /* Estilo para la barra de navegación */
@@ -84,7 +107,7 @@ html, body {
 }
 
 /* Codigo para la barra lateral la cual tiene links a las redes sociales */
-#taskbar {
+.social-bar {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -99,23 +122,40 @@ html, body {
     align-items: center;
 }
 
-#taskbar #taskbar-center {
-    margin-top: 60px; /* Ajusta este valor para controlar el espacio en la parte superior de los íconos */
+.social-bar__task {
+    margin: 30px;
 }
 
-#taskbar .task {
-    margin: 30px; /* Aumenta este valor para dar más espacio entre las imágenes */
+.social-bar__task:first-child {
+    margin-top: 50px;  /* Valor de altura */
 }
 
-#taskbar .task img {
+.social-bar__task img {
     width: 40px;
     height: 40px;
     transition: transform 0.3s ease;
 }
 
-#taskbar .task img:hover {
+.social-bar__task img:hover {
     transform: scale(1.2);
 }
+
+@media screen and (max-width: 768px) {
+    .social-bar {
+        height: 60px;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;  /* Alinea todos los elementos hijos al centro verticalmente */
+        justify-content: center; /* Centra los elementos hijos horizontalmente */
+    }
+
+    .social-bar__task:first-child {
+        margin-top: 30px; /* Restablece el margen superior del primer hijo a su valor original */
+    }
+} 
+
+
+
 
 /* MODAL PARA EL PRIMER ARCHIVO  */
 
@@ -133,6 +173,23 @@ html, body {
     z-index: 10000; /* Aumenta el z-index para que la ventana modal aparezca por encima de otros elementos */
     
 }
+/* Responsive para la modal  */
+@media screen and (max-width: 768px) {
+    .modal {
+        width: 100%;
+        height: calc(100% - 90px); /* 30px para la barra superior y 60px para la barra inferior */
+        top: 30px; /* Este valor es la altura de tu barra superior. */
+        left: 0;
+        bottom: 60px; /* Este valor es la altura de tu barra inferior. */
+        z-index: 9998; /* Asegúrate de que sea menor que el z-index de tu barra superior. */
+        position: fixed; /* Esto puede ayudar a que la ventana modal se mantenga en su lugar. */
+        overflow: auto; /* Esto añade barras de desplazamiento si el contenido de la modal es demasiado grande. */
+    }
+}
+
+
+
+
 .top-bar-ubuntu {
     cursor: move; /* Cambia el cursor a un puntero */	
     background-color: #323737;
