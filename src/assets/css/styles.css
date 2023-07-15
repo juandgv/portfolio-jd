@@ -3,7 +3,6 @@
     padding: 0;
     outline: none;
     box-sizing: border-box;
-    
 }
 html, body {
     height: 100%;
@@ -15,12 +14,8 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
     
 }
-body {
-    position: relative;
-   
-}
 
-
+/* CSS PARA LA GRILLA DE EL ESCRITORIO (incluyendo las imagenes y el texto */
 .desktop-grid {
     display: flex;
     flex-direction: column;
@@ -67,7 +62,7 @@ body {
     cursor: pointer; /* Cambia el cursor a un puntero */
 }
 
-
+/* //////////////////////////////////////////////////////////// */
 
 /* Estilo para la barra de navegación */
 #navbar {
@@ -86,10 +81,6 @@ body {
 .time-date-container {
     display: flex;
     gap: 20px; /* Espacio entre la fecha y la hora */
-}
-
-body {
-    padding-top: 60px;
 }
 
 /* Codigo para la barra lateral la cual tiene links a las redes sociales */
@@ -126,35 +117,8 @@ body {
     transform: scale(1.2);
 }
 
-
 /* MODAL PARA EL PRIMER ARCHIVO  */
-#sidebar {
-    margin-left: 60px; /* Ajusta este valor para mover la barra lateral a la derecha */
-}
 
-/* Efecto hover para las imagenes y el texto */
-#sidebar .app {
-    position: relative;
-    padding: 10px 10px 10px 10px; /* padding: top right bottom left */
-    border-radius: 10px; /* Añade bordes redondeados */
-    margin-bottom: 20px; /* Añade este para dar más espacio entre aplicaciones */
-}
-
-#sidebar .app:hover {
-    background-color: rgba(255, 255, 255, 0.3); /* Añade un fondo blanco transparente */
-}
-
-#sidebar .app img, #sidebar .app p {
-    display: block;
-    transition-property: color, width; /* Especifica las propiedades que deseo animar */
-    transition-duration: 0.3s; /* Duración de la transición */
-    transition-timing-function: ease; /* Función de temporización de la transición */
-}
-
-#sidebar .app:hover img, #sidebar .app:hover p {
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño al hacer hover */
-    cursor: pointer; /* Cambia el cursor a un puntero */
-}
 /* Codigo para las ventanas */
 /* Estilo para la ventana modal */
 .modal {
@@ -417,6 +381,12 @@ body {
     
 }
 
-  
+.modal .left-align h3, 
+.modal .left-align p, 
+.modal .left-align ul {
+    text-align: left;
+}
+
+
   
   

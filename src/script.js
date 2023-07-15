@@ -6,6 +6,22 @@ function openModal(modalId) {
   function closeModal(modalId) {
     document.getElementById(modalId).style.display = 'none';
   }
+  
+  window.addEventListener('DOMContentLoaded', (event) => {
+    let zIndexCounter = 0;
+
+    // Selecciona todos los elementos modal
+    let modals = document.querySelectorAll(".modal");
+
+    modals.forEach((modal) => {
+        modal.addEventListener('click', function(e) {
+            // Aumenta el contador del z-index y asigna el nuevo z-index al elemento clickeado
+            zIndexCounter++;
+            this.style.zIndex = zIndexCounter;
+        });
+    });
+});
+
 
   //Javascript para maximizar y minimizar la ventana modal
 
