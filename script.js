@@ -64,62 +64,63 @@ topBars.forEach((topBar) => {
 });
 
 document.addEventListener('mousemove', function(e) {
-  if(dragObj == null || dragObj.classList.contains('maximized')) {
-      // Si no se está arrastrando nada o el objeto que se está arrastrando está maximizado, simplemente retorna
-      return;
-  }
-
-  let newLeft = e.pageX - xDiff;
-  let newTop = e.pageY - yDiff;
-
-  if(newLeft < 0) {
-      newLeft = 0;
-  }
-
-  if(newTop < 0) {
-      newTop = 0;
-  }
-
-  if(newLeft > document.body.clientWidth - dragObj.clientWidth) {
-      newLeft = document.body.clientWidth - dragObj.clientWidth;
-  }
-
-  if(newTop > document.body.clientHeight - dragObj.clientHeight) {
-      newTop = document.body.clientHeight - dragObj.clientHeight;
-  }
-
-  dragObj.style.left = newLeft + "px";
-  dragObj.style.top = newTop + "px";
-});
-
-document.addEventListener('mouseup', function() {
-    dragObj = null;
-    xDiff = 0;
-    yDiff = 0;
-});
-
+    if(dragObj == null || dragObj.classList.contains('maximized')) {
+        // Si no se está arrastrando nada o el objeto que se está arrastrando está maximizado, simplemente retorna
+        return;
+    }
+  
+    let newLeft = e.pageX - xDiff;
+    let newTop = e.pageY - yDiff;
+  
+    if(newLeft < 0) {
+        newLeft = 0;
+    }
+  
+    if(newTop < 0) {
+        newTop = 0;
+    }
+  
+    if(newLeft > document.body.clientWidth - dragObj.clientWidth) {
+        newLeft = document.body.clientWidth - dragObj.clientWidth;
+    }
+  
+    if(newTop > document.body.clientHeight - dragObj.clientHeight) {
+        newTop = document.body.clientHeight - dragObj.clientHeight;
+    }
+  
+    dragObj.style.left = newLeft + "px";
+    dragObj.style.top = newTop + "px";
+  });
+  
+  document.addEventListener('mouseup', function() {
+      dragObj = null;
+      xDiff = 0;
+      yDiff = 0;
+  });
+  
 
 
 // Javascript para la navbar superior y codigo para obtener la hora
 // Función para actualizar el tiempo
 function updateTime() {
-  const date = new Date();
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-  let ampm = hours >= 12 ? 'PM' : 'AM';
-
-  hours = hours % 12;
-  hours = hours ? hours : 12; // la hora '0' debería ser '12'
-  minutes = minutes < 10 ? '0'+ minutes : minutes;
-
-  const strTime = hours + ':' + minutes + ' ' + ampm;
-  const strDate = date.toLocaleDateString('default', {month: 'long', day: 'numeric'});
-
-  document.getElementById('date').innerHTML = strDate;
-  document.getElementById('time').innerHTML = strTime;
-
-  setTimeout(updateTime, 1000); // actualiza el tiempo cada segundo
-}
-
-// Llama a la función cuando la página carga
-window.onload = updateTime;
+    const date = new Date();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let ampm = hours >= 12 ? 'PM' : 'AM';
+  
+    hours = hours % 12;
+    hours = hours ? hours : 12; // la hora '0' debería ser '12'
+    minutes = minutes < 10 ? '0'+ minutes : minutes;
+  
+    const strTime = hours + ':' + minutes + ' ' + ampm;
+    const strDate = date.toLocaleDateString('default', {month: 'long', day: 'numeric'});
+  
+    document.getElementById('date').innerHTML = strDate;
+    document.getElementById('time').innerHTML = strTime;
+  
+    setTimeout(updateTime, 1000); // actualiza el tiempo cada segundo
+  }
+  
+  // Llama a la función cuando la página carga
+  window.onload = updateTime;
+  

@@ -42,6 +42,7 @@ html, body {
     transition-duration: 0.3s; /* Duración de la transición */
     transition-timing-function: ease; /* Función de temporización de la transición */
     margin-left: 60px;
+    margin-top: 20px;
     
 }
 
