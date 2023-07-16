@@ -123,4 +123,13 @@ function updateTime() {
   
   // Llama a la función cuando la página carga
   window.onload = updateTime;
-  
+  window.addEventListener('DOMContentLoaded', (event) => {
+    openModal('modal3');
+    var modal = document.getElementById('modal3');
+    // Calcular la posición inicial para centrar la ventana modal
+    var leftPos = (window.innerWidth / 2) - (modal.offsetWidth / 2);
+    var topPos = (window.innerHeight / 2) - (modal.offsetHeight / 2);
+    // Aplicar las posiciones calculadas
+    modal.style.left = leftPos + 'px';
+    modal.style.top = topPos + 'px';
+});

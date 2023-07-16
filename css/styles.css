@@ -21,6 +21,10 @@
     font-style: italic;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('/fonts/PressStart2P-Regular.ttf') format('truetype');
+  }
 * {
     margin: 0;
     padding: 0;
@@ -213,7 +217,7 @@ body {
     overflow: hidden;
     z-index: 10000;
     /* Aumenta el z-index para que la ventana modal aparezca por encima de otros elementos */
-
+  
 }
 
 /* Responsive para la modal  */
@@ -309,6 +313,25 @@ body {
     display: flex;
     overflow: auto;
 }
+/* Crea un contenedor envolvente para el iframe */
+.iframe-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* Establece la relación de aspecto del iframe */
+}
+
+/* Hace que el iframe sea responsive */
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
 
 
 
@@ -319,12 +342,13 @@ body {
     flex-direction: column;
     align-items: center;
 }
-
-#modal3 .content #myImage {
+.myRoundImage {
     max-width: 60%;
     height: auto;
     margin-bottom: 20px;
+    border-radius: 50%;
 }
+
 
 #modal3 .modal-content,
 #modal1 .modal-content {
@@ -343,6 +367,8 @@ body {
     text-align: left;
     margin-bottom: 20px;
 }
+
+
 
 
 #app3 i,
@@ -366,13 +392,68 @@ body {
     cursor: pointer;
     /* Cambia el cursor a un puntero */
 }
+/* Estilo para los gifs en el modal 3  */
+.gif-container {
+    display: flex;
+    justify-content: space-around; /* Esto añade espacio igual entre las imágenes. */
+    margin-bottom: 30px;
+}
+.gif-container img {
+    width: 30%; /* Valor para ajustar el tamaño de los gifs. */
+    height: auto; /* Para mantener las proporciones de las imágenes. */
+}
+.work-gif {
+    width: 65%; /* Ajusta este valor al tamaño deseado. */
+    height: auto; /* Esto mantendrá la proporción del GIF. */
+    margin-bottom: 30px;
+}
+.pixel-art-quote {
+    font-family: 'Press Start 2P', cursive; /* Esta es una fuente de Google que parece pixelada */
+    font-size: 1.5em;
+    color: #8f00ff;
+    background-color: #000000;
+    border: 3px solid #8f00ff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(143, 0, 255, 0.7);
+}
+
+.quote-author {
+    display: block;
+    text-align: right;
+    margin-top: 20px;
+    color: #ffffff;
+    font-size: 1.2em;
+}
+.pixel-font {
+    font-family: 'Press Start 2P', cursive;
+}
+@keyframes wave-animation {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(14deg);
+    }
+}
+
+.wave {
+    display: inline-block;
+    animation-name: wave-animation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
+}
+
+  
+
 
 
 
 /* CSS PARA EL CONTENIDO DE LAS VENTANAS MODALES  */
 
 .modal-content .content h2 {
-    font-size: 30px;
+    font-size: 40px;
     margin-top: 0.2em;
     margin-bottom: 0.3em;
     margin-inline-start: 0;
@@ -550,5 +631,9 @@ body {
 .modal .left-align h3,
 .modal .left-align p,
 .modal .left-align ul {
-    text-align: left;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+.modal .left-align h3{
+    font-size: 30px;
 }
