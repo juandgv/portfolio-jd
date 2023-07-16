@@ -292,7 +292,7 @@ body {
 
 /* Estilos específicos para el modal con id="modal2" */
 #modal2 {
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
