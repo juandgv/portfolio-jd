@@ -259,27 +259,26 @@ body {
     margin-right: auto;
     /* Push everything to the right of the title to the far right */
 }
-
-.minimize,
-.maximize,
-.close {
+button, span {
     background: none;
     border: none;
-    color: white;
-    font-size: 24px;
-    /* Incrementamos el tamaño de la fuente para que los caracteres sean más grandes */
-    line-height: 1;
     margin-left: 10px;
     cursor: pointer;
-    height: 24px;
-    /* Especificamos la altura para asegurar que todos los elementos estén alineados */
     display: flex;
-    /* Utilizamos flexbox para alinear los elementos a lo largo del eje horizontal */
     align-items: center;
-    /* Alineamos los elementos a lo largo del eje vertical */
     justify-content: center;
-    /* Centramos los elementos a lo largo del eje horizontal */
 }
+
+button img, span img {
+    height: 24px;
+    filter: brightness(0) invert(1); /* Se aplica a todas las imágenes dentro de los botones y span */
+}
+
+.icon-button img {
+    width: 24px;
+}
+
+
 
 .close {
     color: red;
